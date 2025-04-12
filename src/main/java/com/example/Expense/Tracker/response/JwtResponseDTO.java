@@ -1,2 +1,15 @@
-package com.example.Expense.Tracker.response;public class JwtResponseDTO {
+package com.example.Expense.Tracker.response;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class JwtResponseDTO {
+
+    private String accessToken;
+    private String token;
 }

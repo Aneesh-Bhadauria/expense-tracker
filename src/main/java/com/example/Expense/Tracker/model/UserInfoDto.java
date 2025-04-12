@@ -1,2 +1,19 @@
-package com.example.Expense.Tracker.model;public class UserInfoDto {
+package com.example.Expense.Tracker.model;
+import com.example.Expense.Tracker.entities.UserInfo;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming (PropertyNamingStrategy.SnakeCaseStrategy.class)
+public class UserInfoDto extends UserInfo
+{
+
+    private String firstName; // first_name
+
+    private String lastName; //last_name
+
+    private Long phoneNumber;
+
+    private String email; // email
+
+
 }

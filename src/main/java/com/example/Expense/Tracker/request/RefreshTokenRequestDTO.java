@@ -1,2 +1,11 @@
-package com.example.Expense.Tracker.request;public class RefreshTokenRequestDTO {
+package com.example.Expense.Tracker.request;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class RefreshTokenRequestDTO {
+    private String token;
 }
