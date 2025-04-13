@@ -1,5 +1,5 @@
-package com.example.Expense.Tracker.service;
-import com.example.Expense.Tracker.entities.UserInfo;
+package com.example.Expense.Tracker.authservice.service;
+import com.example.Expense.Tracker.authservice.entities.UserInfo;
 import com.example.Expense.Tracker.entities.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

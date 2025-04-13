@@ -1,4 +1,4 @@
-package com.example.Expense.Tracker.entities;
+package com.example.Expense.Tracker.authservice.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +42,6 @@ public class UserInfo {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
 
-    private Set<UserRole> roles = new HashSet<>();
+    private Set<com.example.Expense.Tracker.entities.UserRole> roles = new HashSet<>();
 
 }

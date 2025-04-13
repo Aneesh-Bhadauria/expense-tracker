@@ -1,5 +1,5 @@
-package com.example.Expense.Tracker.repository;
-import com.example.Expense.Tracker.entities.RefreshToken;
+package com.example.Expense.Tracker.authservice.repository;
+import com.example.Expense.Tracker.authservice.entities.RefreshToken;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

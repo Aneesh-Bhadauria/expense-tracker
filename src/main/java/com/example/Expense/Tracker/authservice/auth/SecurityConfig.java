@@ -1,7 +1,6 @@
-package com.example.Expense.Tracker.auth;
-import com.example.Expense.Tracker.repository.UserInfoRepository;
-import com.example.Expense.Tracker.service.UserDetailsServiceImpl;
-import com.example.Expense.Tracker.service.UserDetailsServiceimpl;
+package com.example.Expense.Tracker.authservice.auth;
+import com.example.Expense.Tracker.authservice.repository.UserInfoRepository;
+import com.example.Expense.Tracker.authservice.service.UserDetailsServiceImpl;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

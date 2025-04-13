@@ -1,6 +1,6 @@
-package com.example.Expense.Tracker.auth;
+package com.example.Expense.Tracker.authservice.auth;
 import com.example.Expense.Tracker.service.JwtService;
-import com.example.Expense.Tracker.service.UserDetailsServiceimpl;
+import com.example.Expense.Tracker.authservice.service.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,7 +28,7 @@ public class JwtAuthFilter extends OncePerRequestFilter
     private final JwtService jwtService;
 
     @Autowired
-    private final UserDetailsServiceimpl userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
 
 
     @Override

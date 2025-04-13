@@ -1,10 +1,10 @@
-package com.example.Expense.Tracker.controller;
-import com.example.Expense.Tracker.entities.RefreshToken;
+package com.example.Expense.Tracker.authservice.controller;
+import com.example.Expense.Tracker.authservice.entities.RefreshToken;
 import com.example.Expense.Tracker.request.AuthRequestDTO;
 import com.example.Expense.Tracker.request.RefreshTokenRequestDTO;
 import com.example.Expense.Tracker.response.JwtResponseDTO;
 import com.example.Expense.Tracker.service.JwtService;
-import com.example.Expense.Tracker.service.RefreshTokenService;
+import com.example.Expense.Tracker.authservice.service.RefreshTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

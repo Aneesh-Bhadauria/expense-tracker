@@ -1,10 +1,12 @@
-package com.example.Expense.Tracker.service;
-import com.example.Expense.Tracker.entities.UserInfo;
-import com.example.Expense.Tracker.model.UserInfoDto;
-import com.example.Expense.Tracker.repository.UserInfoRepository;
+package com.example.Expense.Tracker.authservice.service;
+
+import com.example.Expense.Tracker.authservice.entities.UserInfo;
+import com.example.Expense.Tracker.authservice.eventProducer.UserInfoProducer;
+import com.example.Expense.Tracker.authservice.model.UserInfoDto;
+import com.example.Expense.Tracker.authservice.repository.UserInfoRepository;
+import com.example.Expense.Tracker.authservice.service.CustomUserDetails;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,9 @@ public class UserDetailsServiceImpl implements UserDetailsService
     @Autowired
     private final PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private final UserInfoProducer userInfoProducer;
+
 
     private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
 
@@ -39,6 +44,7 @@ public class UserDetailsServiceImpl implements UserDetailsService
 
         log.debug("Entering in loadUserByUsername Method...");
         UserInfo user = userRepository.findByUsername(username);
+
         if(user == null){
             log.error("Username not found: " + username);
             throw new UsernameNotFoundException("could not found user..!!");
@@ -58,8 +64,10 @@ public class UserDetailsServiceImpl implements UserDetailsService
             return false;
         }
         String userId = UUID.randomUUID().toString();
-        userRepository.save(new UserInfo(userId, userInfoDto.getUsername(), userInfoDto.getPassword(), new HashSet<>()));
+        userRepository.save(new UserInfo(userId, userInfoDto.getUsername(), userInfoDto.getPassword(),new HashSet<>()));
         // pushEventToQueue
+        userInfoProducer.sendEventToKafka(userInfoDto);
+
         return true;
     }
 }

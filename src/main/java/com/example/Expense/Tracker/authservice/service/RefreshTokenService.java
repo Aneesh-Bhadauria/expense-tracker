@@ -1,8 +1,9 @@
-package com.example.Expense.Tracker.service;
-import com.example.Expense.Tracker.entities.RefreshToken;
-import com.example.Expense.Tracker.entities.UserInfo;
-import com.example.Expense.Tracker.repository.RefreshTokenRepository;
-import com.example.Expense.Tracker.repository.UserInfoRepository;
+package com.example.Expense.Tracker.authservice.service;
+import com.example.Expense.Tracker.authservice.entities.RefreshToken;
+import com.example.Expense.Tracker.authservice.entities.UserInfo;
+
+import com.example.Expense.Tracker.authservice.repository.RefreshTokenRepository;
+import com.example.Expense.Tracker.authservice.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

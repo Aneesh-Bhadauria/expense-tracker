@@ -1,4 +1,4 @@
-package com.example.Expense.Tracker.entities;
+package com.example.Expense.Tracker.authservice.entities;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.persistence.Entity;
